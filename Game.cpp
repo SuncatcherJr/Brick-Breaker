@@ -18,7 +18,13 @@ void Game::Reset()
 	ball.visage = 'O';
 	ball.color = ConsoleColor::Cyan;
 	ResetBall();
-
+	if (!bricks.empty())
+	{
+		while (!bricks.empty())
+		{
+			bricks.pop_back();
+		}
+	}
 	// TODO #2 - Add this brick and 4 more bricks to the vector
 	for (int i = 0; i < 5; i++)
 	{
